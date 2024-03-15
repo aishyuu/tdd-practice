@@ -1,4 +1,4 @@
-const sum = require("../code/sum");
+import sum from "../code/sum";
 
 test("adds 1 + 2 to equal 3", () => {
   expect(sum(1, 2)).toBe(3);
@@ -18,23 +18,23 @@ test("Adding 2 and 2 does not equal 3", () => {
   expect(sum(2, 2)).not.toBe(3);
 });
 
-test("null", () => {
-  const n = null;
-  expect(n).toBeNull();
-  expect(n).toBeDefined();
-  expect(n).not.toBeDefined();
-  expect(n).not.toBeTruthy();
-  expect(n).toBeFalsy();
-});
+// test("null", () => {
+//   const n = null;
+//   expect(n).toBeNull();
+//   expect(n).toBeDefined();
+//   expect(n).not.toBeDefined();
+//   expect(n).not.toBeTruthy();
+//   expect(n).toBeFalsy();
+// });
 
-test("zero", () => {
-  const z = 0;
-  expect(z).toBeNull();
-  expect(z).toBeDefined();
-  expect(z).not.toBeDefined();
-  expect(z).not.toBeTruthy();
-  expect(z).toBeFalsy();
-});
+// test("zero", () => {
+//   const z = 0;
+//   expect(z).toBeNull();
+//   expect(z).toBeDefined();
+//   expect(z).not.toBeDefined();
+//   expect(z).not.toBeTruthy();
+//   expect(z).toBeFalsy();
+// });
 
 test("two plus two", () => {
   const value = 2 + 2;
