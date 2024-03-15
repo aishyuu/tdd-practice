@@ -17,19 +17,50 @@ export function reverseString(str) {
 }
 
 export class Calculator {
-    add(num1, num2) {
-        return num1 + num2;
-    }
+  add(num1, num2) {
+    return num1 + num2;
+  }
 
-    subtract(num1, num2) {
-        return num1 - num2;
-    }
+  subtract(num1, num2) {
+    return num1 - num2;
+  }
 
-    multiply(num1, num2) {
-        return num1 * num2;
-    }
+  multiply(num1, num2) {
+    return num1 * num2;
+  }
 
-    divide(num1, num2) {
-        return num1 / num2;
+  divide(num1, num2) {
+    return num1 / num2;
+  }
+}
+
+/**
+ * Cypher a string using Caesar Shift
+ * @constructor
+ * @param {string} str - String to be cyphered
+ * @param {Number} shift - Cypher shifting number
+ */
+export function shiftCypher(str, shift) {
+  const loweredStr = str.toLowerCase();
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+  let cyphered = {};
+  let result = "";
+
+  for (let i = 0; i < alphabet.length; i++) {
+    if (i + shift >= alphabet.length) {
+      cyphered[alphabet[i]] = alphabet[i + shift - alphabet.length];
+    } else {
+      cyphered[alphabet[i]] = alphabet[i + shift];
     }
+  }
+
+  for (let i = 0; i < loweredStr.length; i++) {
+    if (loweredStr[i].match(/^[;?.,@#$%^&*() \'\"]/)) {
+      result += loweredStr[i];
+    } else {
+      result += cyphered[loweredStr[i]];
+    }
+  }
+
+  return result;
 }
