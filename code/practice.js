@@ -64,3 +64,22 @@ export function shiftCypher(str, shift) {
 
   return result;
 }
+
+/**
+ * Analyzes and array and returns the following:
+ * average, min, max, and length
+ * @constructor
+ * @param {Int32Array} arr - Array of numbers to analyze
+ */
+export function analyzeArray(arr) {
+  let result = {};
+
+  result.average =
+    arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0) /
+    arr.length;
+  result.min = Math.min(...arr);
+  result.max = Math.max(...arr);
+  result.length = arr.length;
+
+  return result;
+}

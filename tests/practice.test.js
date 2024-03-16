@@ -1,4 +1,9 @@
-import { capitalize, reverseString, shiftCypher } from "../code/practice";
+import {
+  analyzeArray,
+  capitalize,
+  reverseString,
+  shiftCypher,
+} from "../code/practice";
 import { Calculator } from "../code/practice";
 
 test("Capitalize 'hello' to 'Hello'", () => {
@@ -22,4 +27,13 @@ test("Cypher testing", () => {
   expect(shiftCypher("Beware the Ides of March.", 7)).toBe(
     "ILDHYL AOL PKLZ VM THYJO.".toLowerCase()
   );
+});
+
+test("Analyzing array", () => {
+  expect(analyzeArray([1, 8, 3, 4, 2, 6])).toEqual({
+    average: 4,
+    min: 1,
+    max: 8,
+    length: 6,
+  });
 });
